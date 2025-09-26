@@ -1,0 +1,86 @@
+{
+  "name": "slider-captcha-js",
+  "version": "1.0.0",
+  "description": "A lightweight slider captcha component for JavaScript and React.",
+  "keywords": [
+    "captcha",
+    "slider",
+    "react",
+    "security",
+    "verification"
+  ],
+  "author": "AmazingTeam <amazingteam@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmazingDevTeam/slider-captcha-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AmazingDevTeam/slider-captcha-js/issues"
+  },
+  "homepage": "https://github.com/AmazingDevTeam/slider-captcha-js#readme",
+  "private": false,
+  "main": "dist/slider-captcha.umd.js",
+  "module": "dist/slider-captcha.esm.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/slider-captcha.esm.js",
+      "require": "./dist/slider-captcha.umd.js"
+    },
+    "./react": {
+      "import": "./dist/react-slider-captcha.esm.js",
+      "require": "./dist/react-slider-captcha.js"
+    },
+    "./slider-captcha.css": "./dist/slider-captcha.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "npm run build && npx serve -p 8080 public",
+    "build": "rollup -c && copy dist\\slider-captcha.esm.js public\\slider-captcha.esm.js && copy src\\slider-captcha.css public\\slider-captcha.css",
+    "test": "jest --testPathIgnorePatterns=tests/e2e",
+    "test:e2e": "npm run build && playwright test"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/plugin-transform-runtime": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@playwright/test": "^1.55.0",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-canvas-mock": "^2.5.2",
+    "jest-environment-jsdom": "^30.1.2",
+    "rollup": "^4.52.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "semantic-release": "^24.2.9",
+    "serve": "^14.2.5",
+    "ts-jest": "^29.4.4",
+    "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "glob": "^9.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.4",
+    "tslib": "^2.8.1"
+  }
+}

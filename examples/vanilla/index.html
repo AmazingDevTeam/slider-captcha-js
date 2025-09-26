@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla JS Example - Slider Captcha</title>
+    <link rel="stylesheet" href="../../src/slider-captcha.css" />
+  </head>
+  <body>
+    <h2 style="text-align:center;">Vanilla JS Example - Slider Captcha</h2>
+    <div id="captcha"></div>
+
+    <script type="module">
+      import { SliderCaptcha } from "../../src/SliderCaptcha.js";
+
+      const captcha = new SliderCaptcha({
+        root: "#captcha",
+        width: 320,
+        height: 160,
+        onSuccess: () => alert("Verified!"),
+        onFail: () => alert("Try again"),
+      });
+
+      captcha.refresh();
+    </script>
+  </body>
+</html>
