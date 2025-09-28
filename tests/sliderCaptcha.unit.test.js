@@ -30,14 +30,9 @@ describe("SliderCaptcha core methods", () => {
     const captcha = new SliderCaptcha({ root: container, width: 300, height: 150, pieceSize: 40, tolerance: 5 });
     captcha.targetX = 50;
     captcha.fill.style.width = "80px"; // outside tolerance
-    // Override _check to avoid canvas usage
-    captcha._check = function() {
-      this.solved = false;
-      this.status.innerText = "❌ Try again!";
-    };
     captcha._check();
     expect(captcha.solved).toBe(false);
-    expect(captcha.status.innerText).toMatch(/Try again/);
+    expect(captcha.status.innerText).toMatch(/Try again|❌/);
   });
 
   test("_drawImageFit() covers container correctly in cover mode", () => {

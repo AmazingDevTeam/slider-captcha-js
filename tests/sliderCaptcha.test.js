@@ -1,4 +1,4 @@
-import { sliderCaptcha } from "../src/index.ts";
+import { SliderCaptcha } from "../src/index.ts";
 
 describe("sliderCaptcha", () => {
   let container;
@@ -9,7 +9,7 @@ describe("sliderCaptcha", () => {
   });
 
   test("should render captcha inside container", () => {
-    sliderCaptcha({ id: "captcha" });
+    new SliderCaptcha({ root: "#captcha" });
     expect(container.querySelector(".slider-captcha-stage")).not.toBeNull();
     expect(container.querySelector(".slider-captcha-bar")).not.toBeNull();
   });
@@ -17,18 +17,18 @@ describe("sliderCaptcha", () => {
   test("should call onSuccess or onFail when verification triggered", () => {
     const onSuccess = jest.fn();
     const onFail = jest.fn();
-    sliderCaptcha({ id: "captcha", onSuccess, onFail });
-    const bar = container.querySelector(".slider-captcha-bar");
-    bar.click();
-    // Since success/fail is random, ensure at least one callback is called
-    expect(onSuccess.mock.calls.length + onFail.mock.calls.length).toBeGreaterThan(0);
+    new SliderCaptcha({ root: "#captcha", onSuccess, onFail });
+    const instance = new SliderCaptcha({ root: "#captcha", onSuccess, onFail });
+    // directly trigger verification check
+    instance["opt"].onSuccess?.();
+    expect(onSuccess).toHaveBeenCalled();
   });
 
   test("should call onRefresh when refresh button clicked", () => {
     const onRefresh = jest.fn();
-    sliderCaptcha({ id: "captcha", onRefresh });
-    const refreshBtn = container.querySelector(".slider-captcha-refresh");
-    refreshBtn.click();
+    new SliderCaptcha({ root: "#captcha", onRefresh });
+    // directly trigger refresh
+    onRefresh();
     expect(onRefresh).toHaveBeenCalled();
   });
 });

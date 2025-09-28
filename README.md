@@ -1,15 +1,19 @@
 # 🎯 Slider Captcha Library
 
 [![npm version](https://img.shields.io/npm/v/slider-captcha-js.svg)](https://www.npmjs.com/package/slider-captcha-js)
-[![Build Status](https://github.com/AmazingDevTeam/slider-captcha-js/actions/workflows/ci.yml/badge.svg)](https://github.com/AmazingDevTeam/slider-captcha-js/actions)
-[![Coverage Status](https://img.shields.io/codecov/c/github/AmazingDevTeam/slider-captcha-js.svg)](https://codecov.io/gh/AmazingDevTeam/slider-captcha-js)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/slider-captcha-js)](https://bundlephobia.com/package/slider-captcha-js)
 [![npm downloads](https://img.shields.io/npm/dw/slider-captcha-js)](https://www.npmjs.com/package/slider-captcha-js)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A **lightweight, customizable slider captcha** for **JavaScript, React, and TypeScript**.  
 Supports **UMD + ESM builds**, **themes**, **async verification**, and **server integration**.  
 Perfect for adding a secure, interactive human verification step to your apps.
+
+---
+
+## 🌐 Demo
+
+A live demo is available on GitHub Pages:  
+[https://amazingdevteam.github.io/slider-captcha-js](https://amazingdevteam.github.io/slider-captcha-js)
 
 ---
 
