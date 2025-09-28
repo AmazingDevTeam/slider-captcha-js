@@ -39,3 +39,7 @@ Thumbs.db
 *.tgz
 *.tar.gz
 *.zip
+
+# Storybook build output
+storybook-static/
+public/storybook-static/

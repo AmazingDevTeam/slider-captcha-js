@@ -1,0 +1,39 @@
+# Exclude Storybook build outputs
+storybook-static/
+public/storybook-static/
+
+# Exclude tests
+tests/
+coverage/
+test-results/
+
+# Exclude configs and docs not needed in published package
+*.config.js
+*.config.cjs
+*.config.mjs
+*.config.ts
+*.test.js
+*.spec.js
+jest.config.js
+playwright.config.js
+babel.config.js
+tsconfig.json
+CONTRIBUTING.md
+PUBLISH_STEPS.md
+
+# Exclude development files
+.vscode/
+.idea/
+*.log
+*.log.*
+*.swp
+*.swo
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Ignore docs and misc
+docs/
+.gitignore
+npm-debug.log

@@ -38,7 +38,7 @@
     "dist"
   ],
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && storybook build -o public/storybook-static",
     "deploy": "gh-pages -d public",
     "start": "npm run build && npx serve -p 8080 public",
     "build": "rollup -c && copy dist\\slider-captcha.esm.js public\\slider-captcha.esm.js && copy src\\slider-captcha.css public\\slider-captcha.css",
