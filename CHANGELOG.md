@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.1] - 2025-09-28
+### Added
+- Storybook story for **SliderCaptcha** component (`feat(slider-captcha)`).
+
+### Fixed
+- Refined `.npmignore` rules for a cleaner npm package (`fix(npmignore)`).
+
+---
+
 ## [1.0.0] - 2025-09-24
 ### Added
 - Initial release of **Slider Captcha JS** 🎉
