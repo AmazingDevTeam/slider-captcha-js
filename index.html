@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider Captcha Demo</title>
+  <link rel="stylesheet" href="slider-captcha.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f9f9f9;
+    }
+    .demo-container {
+      width: 340px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h2>Slider Captcha Demo</h2>
+    <div id="captcha"></div>
+    <button id="toggleTheme" style="margin-top:12px;">Toggle Theme</button>
+  </div>
+
+  <script type="module">
+    import { SliderCaptcha } from "./slider-captcha.esm.js";
+
+    // Theme toggle button
+    document.getElementById("toggleTheme").addEventListener("click", () => {
+      captcha.opt.theme = (captcha.opt.theme === "dark" ? "light" : "dark");
+      captcha.root.classList.remove("slider-captcha-light","slider-captcha-dark");
+      captcha.root.classList.add(captcha.opt.theme === "dark" ? "slider-captcha-dark" : "slider-captcha-light");
+    });
+
+    let captcha = new SliderCaptcha({
+      root: document.getElementById("captcha"),
+      width: 320,
+      height: 160,
+      request: () => {
+        // simulate async request to server
+        return new Promise((resolve) => {
+          console.log("Requesting captcha data...");
+          setTimeout(() => {
+            resolve({ token: "dummy-token-123" });
+          }, 500);
+        });
+      },
+      onVerify: (response) => {
+        console.log("Verification result:", response);
+        alert(response.success ? "✅ Verified!" : "❌ Failed, try again.");
+      }
+    });
+
+  </script>
+</body>
+</html>
