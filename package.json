@@ -41,7 +41,7 @@
     "predeploy": "npm run build && storybook build -o public/storybook-static",
     "deploy": "gh-pages -d public",
     "start": "npm run build && npx serve -p 8080 public",
-    "build": "rollup -c && copy dist\\slider-captcha.esm.js public\\slider-captcha.esm.js && copy src\\slider-captcha.css dist\\slider-captcha.css && copy src\\slider-captcha.css public\\slider-captcha.css",
+    "build": "rollup -c && copy dist\\slider-captcha.esm.js public\\slider-captcha.esm.js && copy dist\\slider-captcha.umd.js public\\slider-captcha.umd.js && copy src\\slider-captcha.css dist\\slider-captcha.css && copy src\\slider-captcha.css public\\slider-captcha.css",
     "test": "jest --testPathIgnorePatterns=tests/e2e",
     "test:e2e": "npm run build && playwright test",
     "storybook": "storybook dev -p 6006",

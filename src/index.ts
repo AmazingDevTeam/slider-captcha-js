@@ -1,1 +1,3 @@
-export { SliderCaptcha } from "./SliderCaptcha";
+import { SliderCaptcha } from "./SliderCaptcha";
+
+export default SliderCaptcha;

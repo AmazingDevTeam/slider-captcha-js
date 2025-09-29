@@ -486,4 +486,4 @@ class SliderCaptcha {
     }
 }
 
-export { SliderCaptcha };
+export { SliderCaptcha as default };
