@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.6] - 2025-09-29
+### Fixed
+- Fixed slider not draggable on Safari 18.4 (macOS).
+- Replaced `instanceof TouchEvent` checks with feature detection (`"touches" in e`) to avoid runtime errors on Safari desktop.
+- Ensured `preventDefault()` is only called when event is cancelable, improving Safari compatibility.
+- Verified cross-browser drag support (Safari, Chrome, Firefox, Edge).
+
+---
+
 ## [1.0.5] - 2025-09-29
 ### Documentation
 - Updated **public/index.html** demo page to use implementation **UMD** builds (`docs(demo)`).
