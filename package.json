@@ -1,6 +1,6 @@
 {
   "name": "slider-captcha-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight slider captcha component for JavaScript and React.",
   "keywords": [
     "captcha",
