@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.4] - 2025-09-29
+### Fixed
+- Ensure `slider-captcha.css` is built and included in both `dist/` and `public/` directories (`fix(build)`).
+
+---
+
 ## [1.0.3] - 2025-09-29
 ### Documentation
 - Updated **README.md** to include CSS reference when using the library via CDN (`docs(readme)`).
