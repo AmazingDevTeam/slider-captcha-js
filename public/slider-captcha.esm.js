@@ -413,13 +413,22 @@ class SliderCaptcha {
             if (this.solved)
                 return;
             down = true;
-            startX = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
+            if ("touches" in e) {
+                startX = e.touches[0].clientX;
+                this._startY = e.touches[0].clientY;
+            }
+            else {
+                startX = e.clientX;
+                this._startY = e.clientY;
+            }
             startLeft = parseFloat(getComputedStyle(this.fill).width) || 0;
-            e.preventDefault();
+            // Safari fix: ensure preventDefault is called to stop native drag/scroll
+            if (e.cancelable) {
+                e.preventDefault();
+            }
             this._startTime = Date.now();
             this._trail = [];
             this._targetType = "button";
-            this._startY = e instanceof TouchEvent ? e.touches[0].clientY : e.clientY;
             this._deltaY = 0;
             this.thumb.style.cursor = "grabbing";
             this.pieceCanvas.style.cursor = "grabbing";
@@ -429,8 +438,15 @@ class SliderCaptcha {
             var _a;
             if (!down)
                 return;
-            const x = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
-            const y = e instanceof TouchEvent ? e.touches[0].clientY : e.clientY;
+            let x, y;
+            if ("touches" in e) {
+                x = e.touches[0].clientX;
+                y = e.touches[0].clientY;
+            }
+            else {
+                x = e.clientX;
+                y = e.clientY;
+            }
             const width = typeof this.opt.width === "number"
                 ? this.opt.width
                 : this.stage.offsetWidth || 320;
