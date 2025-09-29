@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.2] - 2025-09-29
+### Fixed
+- Ensure `slider-captcha.css` is included in the published npm package (`fix(package)`).
+
+---
+
 ## [1.0.1] - 2025-09-28
 ### Added
 - Storybook story for **SliderCaptcha** component (`feat(slider-captcha)`).
