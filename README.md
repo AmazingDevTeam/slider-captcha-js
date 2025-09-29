@@ -61,6 +61,7 @@ npm install slider-captcha-js
 or via CDN:
 
 ```html
+<link rel="stylesheet" href="https://unpkg.com/slider-captcha-js/dist/slider-captcha.css" />
 <script src="https://unpkg.com/slider-captcha-js/dist/slider-captcha.umd.js"></script>
 ```
 
