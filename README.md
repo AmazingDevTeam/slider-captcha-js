@@ -30,9 +30,17 @@ A live demo is available on GitHub Pages:
 
 ---
 
-## ⚙️ Options
+## ⚙️ Options & Logic
 
-Both the **function API** (`sliderCaptcha`) and the **class API** (`new SliderCaptcha`) accept an options object:
+Both the **function API** (`sliderCaptcha`) and the **class API** (`new SliderCaptcha`) accept an options object.
+
+### Validation & Image Source Logic
+- If **`request` + `onVerify`** are provided → the captcha will use **server-side validation**.  
+- Otherwise → it falls back to **client-side validation** (local puzzle check).  
+- If **`imageUrl`** is provided → it will use that as the **custom image source**.  
+- Otherwise → it falls back to a **default random image (picsum)**.
+
+### Available Options
 
 | Option        | Type       | Default     | Description |
 |---------------|-----------|-------------|-------------|
@@ -40,6 +48,7 @@ Both the **function API** (`sliderCaptcha`) and the **class API** (`new SliderCa
 | `width`       | `number` / `string` | `320` | Width of the captcha |
 | `height`      | `number` | `160` | Height of the captcha |
 | `fit`         | `"cover"` / `"contain"` / `"stretch"` | `"cover"` | How the image should fit |
+| `imageUrl`    | `string` / `null` | `null` | Custom image URL for the captcha background (overrides default/request) |
 | `crossOrigin` | `string` / `null` | `null` | Cross-origin setting for images |
 | `theme`       | `"light"` / `"dark"` | `"light"` | Theme mode |
 | `successText` | `string` | `"✅ Verified!"` | Success message |
@@ -63,6 +72,17 @@ or via CDN:
 ```html
 <link rel="stylesheet" href="https://unpkg.com/slider-captcha-js/dist/slider-captcha.css" />
 <script src="https://unpkg.com/slider-captcha-js/dist/slider-captcha.umd.js"></script>
+<script>
+  const captcha = new SliderCaptcha({
+    root: "#stage",
+    width: 320,
+    height: 160,
+    onSuccess: () => alert("Verified!"),
+    onFail: () => alert("Try again"),
+  });
+
+  captcha.refresh();
+</script>
 ```
 
 ---
