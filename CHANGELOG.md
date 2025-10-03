@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.7] - 2025-10-03
+### Changed
+- Bumped version to **1.0.7** (`chore(release)`).
+- Added `export type { SliderCaptchaRef }` in `src/index.ts` so TypeScript consumers can import the ref type directly from the package entry point.
+- Rebuilt distribution bundles (`dist/slider-captcha.esm.js`, `dist/react-slider-captcha.esm.js`, etc.).
+- Updated README.md:
+  - Clarified React usage examples for both JavaScript (`.jsx`) and TypeScript (`.tsx`).
+  - Added example showing how to use `SliderCaptchaRef` with `useRef` in TypeScript.
+  - Ensured JavaScript example uses plain `useRef(null)` without type import.
+
 ## [1.0.6] - 2025-09-29
 ### Fixed
 - Fixed slider not draggable on Safari 18.4 (macOS).
