@@ -109,20 +109,52 @@ or via CDN:
 </script>
 ```
 
-### React
+### React (JavaScript)
 
 ```jsx
-import SliderCaptchaReact from "slider-captcha-js/react";
+import SliderCaptcha from "slider-captcha-js";
+import { useRef } from "react";
 
 function App() {
+  const captchaRef = useRef(null);
+
   return (
-    <SliderCaptchaReact
-      width={320}
-      height={160}
-      theme="light"
-      onSuccess={() => console.log("Verified!")}
-      onFail={() => console.log("Try again")}
-    />
+    <div>
+      <SliderCaptcha
+        ref={captchaRef}
+        width={320}
+        height={160}
+        theme="light"
+        onSuccess={() => console.log("Verified!")}
+        onFail={() => console.log("Try again")}
+      />
+      <button onClick={() => captchaRef.current?.refresh()}>Refresh</button>
+    </div>
+  );
+}
+```
+
+### React (TypeScript)
+
+```tsx
+import SliderCaptcha, { type SliderCaptchaRef } from "slider-captcha-js";
+import { useRef } from "react";
+
+function App() {
+  const captchaRef = useRef<SliderCaptchaRef>(null);
+
+  return (
+    <div>
+      <SliderCaptcha
+        ref={captchaRef}
+        width={320}
+        height={160}
+        theme="light"
+        onSuccess={() => console.log("Verified!")}
+        onFail={() => console.log("Try again")}
+      />
+      <button onClick={() => captchaRef.current?.refresh()}>Refresh</button>
+    </div>
   );
 }
 ```
